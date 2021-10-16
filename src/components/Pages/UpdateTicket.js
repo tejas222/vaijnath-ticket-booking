@@ -88,16 +88,16 @@ export class UpdateTicket extends Component {
           <div className='row '>
             <div className='col-md-6 m-auto bg-light p-5'>
               <form onSubmit={this.handleSubmit}>
-                <div className='mb-3'>
+                {/* <div className='mb-3'>
                   <input
-                    type='number'
+                    type='text'
                     className='form-control'
                     name='id'
                     value={this.state.id}
                     onChange={this.onChange}
                     disabled
                   />
-                </div>
+                </div> */}
 
                 <div className='mb-3'>
                   <input

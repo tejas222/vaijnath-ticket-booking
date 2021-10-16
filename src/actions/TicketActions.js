@@ -27,7 +27,7 @@ export const addBooking = (booking, history) => async (dispatch) => {
     );
     // console.log('Posting data', response);
     toast.success('Booking is Successful..!!');
-    history.push('/dasbboard');
+    // history.push('/dasbboard');
   } catch (error) {
     console.log(error.message);
   }
@@ -78,6 +78,7 @@ export const deleteBooking = (id) => async (dispatch) => {
 };
 
 export const cancelBooking = (id, history) => async (dispatch) => {
+  console.log(id);
   await axios.delete(`http://localhost:3333/bookings/${id}`);
   console.log('Canceled from actions');
   history.push('/usermsg');
@@ -85,5 +86,5 @@ export const cancelBooking = (id, history) => async (dispatch) => {
     type: DELETE_BOOKING,
     payload: id,
   });
-  toast.error('Booking is Canceled Successful..!!');
+  toast.error('Booking is Canceled ..!!');
 };
