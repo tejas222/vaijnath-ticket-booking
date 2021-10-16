@@ -6,6 +6,7 @@ import {
 } from '../actions/types';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { Redirect } from 'react-router-dom';
 
 export const addBooking = (booking, history) => async (dispatch) => {
   try {
@@ -78,7 +79,7 @@ export const deleteBooking = (id) => async (dispatch) => {
 };
 
 export const cancelBooking = (id, history) => async (dispatch) => {
-  console.log(id);
+  console.log('Recieving in cancel', history);
   await axios.delete(`http://localhost:3333/bookings/${id}`);
   console.log('Canceled from actions');
   history.push('/usermsg');
@@ -87,4 +88,5 @@ export const cancelBooking = (id, history) => async (dispatch) => {
     payload: id,
   });
   toast.error('Booking is Canceled ..!!');
+  return;
 };

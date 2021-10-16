@@ -22,7 +22,7 @@ export class BookTicket extends Component {
     super(props);
 
     this.state = {
-      id: '',
+      id: uuid(),
       fullname: '',
       email: '',
       phone: '',
@@ -53,7 +53,7 @@ export class BookTicket extends Component {
       aadhar: this.state.aadhar,
       isSubmitted: false,
       price: this.state.persons * 300,
-      id: uuid(),
+      id: this.state.id,
     };
     console.log('price', newBooking.price);
     this.props.addBooking(newBooking, this.props.history);
@@ -61,20 +61,20 @@ export class BookTicket extends Component {
     this.setState({
       isSubmitted: !this.state.isSubmitted,
       price: this.state.persons * 300,
-      id: uuid(),
     });
   };
 
   render() {
     const bookingValues = this.state;
-    console.log('BookingValues', bookingValues);
+    const history = this.props.history;
+    console.log('BookingValues', this.props.history);
     return (
       <>
         <div className='col-md-12 col-lg-6 m-auto' id='msg'></div>
 
         <div className='container p-5  '>
           {this.state.isSubmitted ? (
-            <InstantDisplay bookingValues={bookingValues} />
+            <InstantDisplay bookingValues={bookingValues} history={history} />
           ) : (
             <div>
               <div className='row'>

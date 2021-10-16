@@ -1,18 +1,6 @@
 {
   "bookings": [
     {
-      "fullname": "Sonya Mccall",
-      "email": "tavimet@mailinator.com",
-      "phone": "73",
-      "address": "Repudiandae iusto ea",
-      "persons": "77",
-      "date": "1982-03-23",
-      "slot": "9 AM - 10 AM",
-      "aadhar": "Voluptatem et rem a",
-      "isSubmitted": "false",
-      "id": 12
-    },
-    {
       "fullname": "Troy Landry",
       "email": "duratasa@mailinator.com",
       "phone": "64",
@@ -108,18 +96,6 @@
       "id": 20
     },
     {
-      "fullname": "Oscar Contreras",
-      "email": "mifibe@mailinator.com",
-      "phone": "7",
-      "address": "Est unde minim vita",
-      "persons": "64",
-      "date": "1997-01-11",
-      "slot": "7 AM - 8 AM",
-      "aadhar": "Porro impedit solut",
-      "isSubmitted": false,
-      "id": 41
-    },
-    {
       "fullname": "Maryam Foreman",
       "email": "genu@mailinator.com",
       "phone": "50",
@@ -130,30 +106,6 @@
       "aadhar": "Assumenda deleniti e",
       "isSubmitted": false,
       "id": 42
-    },
-    {
-      "fullname": "Leigh Chambers",
-      "email": "ninuquwi@mailinator.com",
-      "phone": "4",
-      "address": "Earum natus architec",
-      "persons": "48",
-      "date": "2005-05-22",
-      "slot": "7 AM - 8 AM",
-      "aadhar": "Non commodo ipsam su",
-      "isSubmitted": false,
-      "id": 43
-    },
-    {
-      "fullname": "Abdul Aguirre",
-      "email": "wuva@mailinator.com",
-      "phone": "63",
-      "address": "Aute consectetur et",
-      "persons": "68",
-      "date": "1983-09-22",
-      "slot": "6 AM - 7 AM",
-      "aadhar": "Velit dignissimos ac",
-      "isSubmitted": false,
-      "id": 44
     },
     {
       "fullname": "Ezekiel Arnold",
@@ -631,17 +583,67 @@
       "id": "536ed0c3-cd0d-4f2f-b68d-6a2e78504ec9"
     },
     {
-      "fullname": "Gwendolyn Pickett",
-      "email": "cipibubup@mailinator.com",
-      "phone": "29",
-      "address": "Libero cum neque vol",
-      "persons": "73",
-      "date": "28-9-2021",
-      "slot": "Select Slot",
-      "aadhar": "Dolore neque dolores",
+      "fullname": "Casey Lopez",
+      "email": "fomoqalagi@mailinator.com",
+      "phone": "100",
+      "address": "Molestias totam labo",
+      "persons": "65",
+      "date": "5-10-2021",
+      "slot": "8 AM - 9 AM",
+      "aadhar": "Voluptatem doloremqu",
       "isSubmitted": false,
-      "price": 21900,
-      "id": "6d42b60d-0472-4361-9d88-ff7e6dcf8593"
+      "price": 19500,
+      "id": "ca7e18e3-767a-4e32-83fc-58c18f794201"
+    },
+    {
+      "fullname": "Rose Morrison",
+      "email": "xyzagafi@mailinator.com",
+      "phone": "83",
+      "address": "Duis harum excepturi",
+      "persons": "39",
+      "date": "3-10-2021",
+      "slot": "8 AM - 9 AM",
+      "aadhar": "Cum eos et accusamu",
+      "isSubmitted": false,
+      "price": 11700,
+      "id": "5272433e-9690-49fd-bda5-54f820a35582"
+    },
+    {
+      "fullname": "Imogene Schroeder",
+      "email": "nyfu@mailinator.com",
+      "phone": "98",
+      "address": "Est sequi in evenie",
+      "persons": "96",
+      "date": "28-9-2021",
+      "slot": "7 AM - 8 AM",
+      "aadhar": "Necessitatibus ut al",
+      "isSubmitted": false,
+      "price": 28800,
+      "id": "5fd0c6b4-15bf-4091-a620-9ec5f9b3b6a2"
+    },
+    {
+      "id": "f0b87f9b-93da-4ce3-a697-d179436d1914",
+      "fullname": "Mia Bonner updated",
+      "email": "syru@mailinator.com",
+      "phone": "91",
+      "address": "Voluptatem Beatae u",
+      "persons": "26",
+      "date": "20-9-2021",
+      "slot": "9 AM - 10 AM",
+      "aadhar": "Eum obcaecati beatae"
+    },
+    {
+      "fullname": "Phillip Noble",
+      "email": "rejoturu@mailinator.com",
+      "phone": "60",
+      "address": "Irure accusamus in v",
+      "persons": "32",
+      "date": "20-9-2021",
+      "slot": "8 AM - 9 AM",
+      "aadhar": "Enim irure suscipit ",
+      "isSubmitted": false,
+      "price": 9600,
+      "id": "ab9f7ebd-c9bb-4265-aaab-01ff93405a88"
     }
   ]
 }

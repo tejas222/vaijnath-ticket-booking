@@ -46,6 +46,7 @@ export class ViewTicket extends Component {
   }
 
   handleClick = (id, history) => {
+    console.log('from View', this.props.history);
     this.props.cancelBooking(id, this.props.history);
   };
 

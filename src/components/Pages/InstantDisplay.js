@@ -6,7 +6,9 @@ import { connect } from 'react-redux';
 import { getBooking, cancelBooking } from '../../actions/TicketActions';
 
 export class InstantDisplay extends Component {
-  handleClick = (id, history) => {
+  handleClick = (id) => {
+    console.log('from instant', this.props.history);
+
     this.props.cancelBooking(id, this.props.history);
   };
 
@@ -88,19 +90,22 @@ export class InstantDisplay extends Component {
               <span className='mx-2  '>
                 <Link to='/'>
                   <i
-                    className='fa fa-arrow-circle-left text-success fs-3'
+                    className='fa fa-arrow-circle-left text-success fs-4'
                     title='Back'
                   ></i>
                 </Link>
               </span>
-              {/* <span className='mx-2  '>
+              <span className='mx-2  '>
                 <Link to={`/update/${newBooking.id}`}>
-                  <i className='fa fa-pencil text-primary' title='Edit'></i>
+                  <i
+                    className='fa fa-pencil text-primary fs-4'
+                    title='Edit'
+                  ></i>
                 </Link>
-              </span>*/}
+              </span>
               <span className='mx-2  '>
                 <i
-                  className='fa fa-trash text-danger cursor'
+                  className='fa fa-trash text-danger cursor fs-4'
                   title='Delete'
                   onClick={this.handleClick.bind(this, newBooking.id)}
                 ></i>

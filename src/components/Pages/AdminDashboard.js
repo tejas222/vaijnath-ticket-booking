@@ -38,7 +38,7 @@ export class AdminDashboard extends Component {
               <th>
                 <input type='checkbox' />
               </th>
-              <th>Id</th>
+
               <th>Name</th>
 
               <th>Booking Date</th>
