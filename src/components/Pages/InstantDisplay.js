@@ -116,6 +116,9 @@ export class InstantDisplay extends Component {
               <span className='mx-2 fs-4'>
                 {newBooking.persons} x 300 Rs ={newBooking.price}
               </span>
+              <p>
+                <button className='btn btn-dark mt-2'>Pay Now</button>
+              </p>
             </div>
           </div>
         </div>
