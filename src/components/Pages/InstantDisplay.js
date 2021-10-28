@@ -88,7 +88,7 @@ export class InstantDisplay extends Component {
             <hr />
             <div className='col-lg-2 col-md-2 col-sm-12 text-center d-flex align-items-center  '>
               <span className='mx-2  '>
-                <Link to='/'>
+                <Link to='/bookticket'>
                   <i
                     className='fa fa-arrow-circle-left text-success fs-4'
                     title='Back'

@@ -67,11 +67,11 @@ export class UpdateTicket extends Component {
       phone: this.state.phone,
       address: this.state.address,
       persons: this.state.persons,
-      date: this.state.date,
+      date: this.state.date.split('-').reverse().join('-'),
       slot: this.state.slot,
       aadhar: this.state.aadhar,
     };
-
+    console.log('After updaate', updateBooking.date);
     this.props.updateBooking(this.state.id, updateBooking, this.props.history);
   };
 
@@ -166,7 +166,7 @@ export class UpdateTicket extends Component {
                     className='form-control'
                     name='date'
                     selected={this.state.date}
-                    onChange={this.onChange}
+                    onChange={(date) => this.setState({ date: date })}
                     isClearable
                     placeholderText='Select Date'
                     closeOnScroll={true}

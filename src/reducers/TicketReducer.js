@@ -11,6 +11,7 @@ import {
 const initialstate = {
   bookings: [],
   booking: [],
+  bookingsCopy: [],
 };
 
 export default function (state = initialstate, action) {
@@ -19,6 +20,7 @@ export default function (state = initialstate, action) {
       return {
         ...state,
         bookings: action.payload,
+        bookingsCopy: action.payload,
       };
 
     case GET_SINGLE_BOOKING:
@@ -32,10 +34,20 @@ export default function (state = initialstate, action) {
         booking: action.payload,
       };
     case DELETE_BOOKING:
-      console.log('Deleted from Reducer');
+      // console.log('Deleted from Reducer');
       return {
         bookings: state.bookings.filter(
           (booking) => booking.id !== action.payload
+        ),
+      };
+    case SORT_BOOKING:
+      //console.log('In Reducer Sorting');
+      return {
+        ...state,
+        bookings: state.bookingsCopy.filter((item) =>
+          action.payload === '1-1-1970'
+            ? state.bookingsCopy
+            : item.date === action.payload
         ),
       };
     default:

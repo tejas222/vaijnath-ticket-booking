@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import Dashboard from './components/Admin/Dashboard';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route path='/admin' component={Dashboard} />
+        <Route path='/' component={App} />
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

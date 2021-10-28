@@ -18,7 +18,6 @@ export class DisplayTickets extends Component {
           <td>
             <input type='checkbox' />
           </td>
-
           <td>{booking.fullname} </td>
           <td>{booking.date}</td>
           <td>{booking.slot} </td>

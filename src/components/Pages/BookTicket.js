@@ -111,7 +111,7 @@ export class BookTicket extends Component {
 
                     <div className='mb-3'>
                       <input
-                        type='number'
+                        type='tel'
                         className='form-control'
                         placeholder='Enter Phone'
                         name='phone'

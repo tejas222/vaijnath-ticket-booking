@@ -3,6 +3,7 @@ import {
   DELETE_BOOKING,
   UPDATE_BOOKING,
   GET_SINGLE_BOOKING,
+  SORT_BOOKING,
 } from '../actions/types';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -15,12 +16,7 @@ export const addBooking = (booking, history) => async (dispatch) => {
     const year = newdate.getFullYear();
     const month = newdate.getMonth() + 1;
     const date = newdate.getDate();
-    booking.date =
-      newdate.getDate() +
-      '-' +
-      newdate.getMonth() +
-      '-' +
-      newdate.getFullYear();
+    booking.date = date + '-' + month + '-' + year;
     console.log(booking.date);
     const response = await axios.post(
       'http://localhost:3333/bookings',
@@ -89,4 +85,12 @@ export const cancelBooking = (id, history) => async (dispatch) => {
   });
   toast.error('Booking is Canceled ..!!');
   return;
+};
+
+export const sortBooking = (date) => {
+  console.log('In Action Sorting');
+  return {
+    type: SORT_BOOKING,
+    payload: date,
+  };
 };
