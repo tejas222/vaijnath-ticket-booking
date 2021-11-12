@@ -5,7 +5,11 @@ import 'react-datepicker/dist/react-datepicker.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import { getBooking, cancelBooking } from '../../actions/TicketActions';
+import {
+  getBooking,
+  cancelBooking,
+  confirmBooking,
+} from '../../actions/TicketActions';
 
 export class ViewTicket extends Component {
   constructor(props) {
@@ -21,12 +25,25 @@ export class ViewTicket extends Component {
       date: '',
       slot: '',
       aadhar: '',
+      flag: '',
+      confirmed: '',
     };
   }
 
   componentWillReceiveProps(NextProps) {
-    const { id, fullname, email, phone, address, persons, date, slot, aadhar } =
-      NextProps.bookings;
+    const {
+      id,
+      fullname,
+      email,
+      phone,
+      address,
+      persons,
+      date,
+      slot,
+      aadhar,
+      flag,
+      confirmed,
+    } = NextProps.bookings;
     this.setState({
       id,
       fullname,
@@ -37,6 +54,8 @@ export class ViewTicket extends Component {
       date,
       slot,
       aadhar,
+      flag,
+      confirmed,
     });
   }
 
@@ -49,7 +68,23 @@ export class ViewTicket extends Component {
     console.log('from View', this.props.history);
     this.props.cancelBooking(id, this.props.history);
   };
-
+  handleConfirm = (e) => {
+    const updateBooking = {
+      id: this.state.id,
+      fullname: this.state.fullname,
+      email: this.state.email,
+      phone: this.state.phone,
+      address: this.state.address,
+      persons: this.state.persons,
+      date: this.state.date.split('-').reverse().join('-'),
+      slot: this.state.slot,
+      aadhar: this.state.aadhar,
+      flag: 0,
+      confirmed: true,
+    };
+    console.log('After updaate', updateBooking.date);
+    this.props.confirmBooking(this.state.id, updateBooking, this.props.history);
+  };
   render() {
     return (
       <>
@@ -88,6 +123,12 @@ export class ViewTicket extends Component {
                 Address
               </label>
               <p>{this.state.address}</p>
+              <label htmlFor='status' className='font-weight-700'>
+                Status
+              </label>
+              <p>
+                {this.state.confirmed ? 'confirmed' : 'Confirmation Pending'}
+              </p>
             </div>
             <div className='col-md-6'>
               <label htmlFor='persons' className='font-weight-700'>
@@ -115,21 +156,33 @@ export class ViewTicket extends Component {
               <span className='mx-2  '>
                 <Link to='/'>
                   <i
-                    className='fa fa-arrow-circle-left text-success'
+                    className='fa fa-arrow-circle-left text-success fs-4'
                     title='Back'
                   ></i>
                 </Link>
               </span>
               <span className='mx-2  '>
                 <Link to={`/update/${this.state.id}`}>
-                  <i className='fa fa-pencil text-primary' title='Edit'></i>
+                  <i
+                    className='fa fa-pencil text-primary fs-4'
+                    title='Edit'
+                  ></i>
                 </Link>
               </span>
               <span className='mx-2  '>
                 <i
-                  className='fa fa-trash text-danger cursor'
+                  className='fa fa-trash text-danger cursor fs-4'
                   title='Delete'
                   onClick={this.handleClick.bind(this, this.state.id)}
+                ></i>
+              </span>
+              <span className='mx-2  '>
+                <i
+                  className={`fa fa-check-circle text-success cursor fs-4 ${
+                    this.state.confirmed ? 'd-none' : ''
+                  }`}
+                  title='Confirm Booking'
+                  onClick={this.handleConfirm.bind(this, this.state.id)}
                 ></i>
               </span>
             </div>
@@ -150,12 +203,15 @@ ViewTicket.propTypes = {
   getBooking: PropTypes.func.isRequired,
   cancelBooking: PropTypes.func.isRequired,
   bookings: PropTypes.object.isRequired,
+  confirmBooking: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   bookings: state.bookings.booking,
 });
 
-export default connect(mapStateToProps, { getBooking, cancelBooking })(
-  ViewTicket
-);
+export default connect(mapStateToProps, {
+  getBooking,
+  cancelBooking,
+  confirmBooking,
+})(ViewTicket);

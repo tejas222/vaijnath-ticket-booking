@@ -6,8 +6,8 @@ export default function Navbar() {
     <>
       <header>
         <div className='container-fluid headerbg'>
-          <div className='row '>
-            <div className='col-md-12  '>
+          <div className='row'>
+            <div className='col-md-12'>
               <h2 className='fs-1 text-center text-white heading'>
                 श्री क्षेत्र परळी वैजनाथ ज्योतिर्लिंग
               </h2>
@@ -15,7 +15,7 @@ export default function Navbar() {
           </div>
         </div>
       </header>
-      <nav className='navbar sticky-top navbar-expand-lg bg-warning navbar-light p-0'>
+      <nav className='navbar navbar-expand-lg bg-warning navbar-light p-0'>
         <div className='container-fluid '>
           <a className='navbar-brand'></a>
           <button

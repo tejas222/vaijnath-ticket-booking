@@ -23,7 +23,7 @@ export class AdminDashboard extends Component {
 
   render() {
     const bookings = this.props.booking.bookings;
-    console.log('Bookings after sort', bookings);
+    console.log('Bookings legnth after sort', bookings.length);
     const pagesVisited = this.state.pageNumber * this.state.usersPerPage;
     const pageCount = Math.ceil(bookings.length / this.state.usersPerPage);
     console.log(bookings.length);
@@ -31,16 +31,16 @@ export class AdminDashboard extends Component {
       this.setState({ pageNumber: selected });
     };
     return (
-      <div className='container p-5 '>
-        <SortBooking />
-        <h1 className='text-center'>Booked Tickets</h1>
-
+      <div>
+        {/* <div className='mb-3 col-4 sortbox'>
+          <SortBooking />
+        </div> */}
         {bookings.length === 0 ? (
           <h2 className='text-center mt-5'>No Bookings</h2>
         ) : (
           <div>
-            <table className='table table-bordered border-secondary'>
-              <thead className='bg-warning'>
+            <table className='table table-responsive'>
+              <thead>
                 <tr>
                   <th>
                     <input type='checkbox' />

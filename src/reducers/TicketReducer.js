@@ -12,10 +12,12 @@ const initialstate = {
   bookings: [],
   booking: [],
   bookingsCopy: [],
+  
 };
 
 export default function (state = initialstate, action) {
   switch (action.type) {
+    
     case GET_BOOKINGS:
       return {
         ...state,

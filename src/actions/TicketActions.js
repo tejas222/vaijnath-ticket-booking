@@ -1,4 +1,5 @@
 import {
+  ADD_BOOKING,
   GET_BOOKINGS,
   DELETE_BOOKING,
   UPDATE_BOOKING,
@@ -7,9 +8,8 @@ import {
 } from '../actions/types';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { Redirect } from 'react-router-dom';
 
-export const addBooking = (booking, history) => async (dispatch) => {
+export const addBooking = (booking) => async (dispatch) => {
   try {
     console.log(booking.date);
     const newdate = new Date(booking.date);
@@ -18,11 +18,15 @@ export const addBooking = (booking, history) => async (dispatch) => {
     const date = newdate.getDate();
     booking.date = date + '-' + month + '-' + year;
     console.log(booking.date);
+
     const response = await axios.post(
       'http://localhost:3333/bookings',
       booking
     );
-    // console.log('Posting data', response);
+    dispatch({
+      type: ADD_BOOKING,
+      payload: response.data,
+    });
     toast.success('Booking is Successful..!!');
     // history.push('/dasbboard');
   } catch (error) {
@@ -59,6 +63,25 @@ export const updateBooking = (id, booking, history) => async (dispatch) => {
     });
     history.push(`/viewticket/${id}`);
     toast.success('Booking is Updated Successful..!!');
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export const confirmBooking = (id, booking, history) => async (dispatch) => {
+  try {
+    console.log('in Confirm booking');
+    const response = await axios.put(
+      `http://localhost:3333/bookings/${id}`,
+      booking
+    );
+    dispatch({
+      type: UPDATE_BOOKING,
+      payload: response.data,
+    });
+    history.push(`/viewticket/${id}`);
+
+    toast.success('Booking is Confirmed..!!');
   } catch (error) {
     console.log(error.message);
   }

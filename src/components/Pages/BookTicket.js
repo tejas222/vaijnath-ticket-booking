@@ -33,6 +33,7 @@ export class BookTicket extends Component {
       aadhar: '',
       isSubmitted: false,
       price: '',
+      flag: 0,
     };
   }
 
@@ -54,6 +55,7 @@ export class BookTicket extends Component {
       isSubmitted: false,
       price: this.state.persons * 300,
       id: this.state.id,
+      flag: 1,
     };
     console.log('price', newBooking.price);
     this.props.addBooking(newBooking, this.props.history);

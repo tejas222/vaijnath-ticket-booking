@@ -6,11 +6,12 @@
   background-size: cover;
   padding: 60px;
   width: 100%;
- 
+  
 }
 
 .heading{
   font-weight: 700;
+  z-index: 10;
 }
 label{
   font-weight: 700;
@@ -21,4 +22,101 @@ label{
   cursor:pointer
 }
   
- 
+.sidebar {
+  position: fixed;
+  background-color: #333;
+  height: 100%;
+  width: 300px;
+  top: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  
+}
+
+.sidebar.inactive {
+  width: 80px;
+}
+.inactive #icon {
+  font-size: 44px;
+}
+.inactive #title {
+  display: none;
+}
+.sidebar li {
+  list-style-type: none;
+  height: auto;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.sidebar #icon {
+  flex: 30%;
+  text-align: center;
+  cursor: pointer;
+}
+.sidebar #title {
+  flex: 70%;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background-color: black;
+}
+.backToggle {
+  color: #fff;
+  border-radius: 20px;
+}
+.topbar {
+  height: 50px;
+  z-index: -1;
+}
+.topbar ul {
+  margin: 0;
+}
+.topbar li {
+  list-style-type: none;
+  cursor: pointer;
+  margin: 0 5px;
+  display: inline;
+}
+.main-container {
+  margin-left: 300px;
+  -webkit-transition: all 2s ease;
+  transition: all 0.5s ease;
+}
+.main-container.inactive {
+  margin-left: 80px;
+  -webkit-transition: all 2s ease;
+  transition: all 0.5s ease;
+}
+.mainboard {
+  padding: 2rem;
+}
+
+.mainboard section {
+  padding: 2rem 0;
+}
+.top-card {
+  padding: 20px;
+  box-shadow: 1px 1px 12px -2px rgba(126, 125, 125, 0.493);
+}
+
+.fs-1 {
+  font-size: 55px;
+   
+}
+
+.custom-shadow {
+  box-shadow: 4px 8px 15px -10px rgba(126, 125, 125, 0.493);
+}
+.footer {
+  position: relative;
+  bottom: -50px;
+}
+.sortbox
+{
+  float: right;
+}

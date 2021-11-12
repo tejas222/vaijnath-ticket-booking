@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import store from './components/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import BookTicket from './components/Pages/BookTicket';
 import UpdateTicket from './components/Pages/UpdateTicket';
 import ViewTicket from './components/Pages/ViewTicket';
@@ -19,20 +19,20 @@ import Dashboard from './components/Admin/Dashboard';
 function App() {
   return (
     <>
-      <Provider store={store}>
-        <div>
-          <Router>
-            <Navbar />
-            <Route exact path='/' component={BookTicket} />
-            <Route exact path='/bookticket' component={BookTicket} />
-            <Route exact path='/update/:id' component={UpdateTicket} />
-            <Route exact path='/dasbboard' component={AdminDashboard} />
-            <Route exact path='/viewticket/:id' component={ViewTicket} />
-            <Route path='/usermsg' component={AfterDeleteMsg}></Route>
-            <Footer />
-          </Router>
-        </div>
-      </Provider>
+      <div>
+        <Router>
+          <Navbar />
+          <Route exact path='/admin' component={Dashboard} />
+          <Route exact path='/' component={BookTicket} />
+          <Route exact path='/bookticket' component={BookTicket} />
+          <Route exact path='/update/:id' component={UpdateTicket} />
+          <Route exact path='/dasbboard' component={AdminDashboard} />
+          <Route exact path='/viewticket/:id' component={ViewTicket} />
+          <Route path='/usermsg' component={AfterDeleteMsg}></Route>
+          <Footer />
+        </Router>
+      </div>
+
       <ToastContainer
         autoClose={1500}
         position='top-right'

@@ -5,15 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Dashboard from './components/Admin/Dashboard';
+import { Provider } from 'react-redux';
+import store from './components/store';
+import Navbar from './components/Reusable/Navbar';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Switch>
-        <Route path='/admin' component={Dashboard} />
-        <Route path='/' component={App} />
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route exact path='/admin' component={Dashboard} />
+          <Route path='/' component={App} />
+        </Switch>
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
