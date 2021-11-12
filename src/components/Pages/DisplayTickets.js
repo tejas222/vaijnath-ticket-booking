@@ -21,6 +21,13 @@ export class DisplayTickets extends Component {
           <td>{booking.fullname} </td>
           <td>{booking.date}</td>
           <td>{booking.slot} </td>
+          <td>
+            {booking.confirmed ? (
+              <p class='text-success'>Confirmed</p>
+            ) : (
+              <p class='text-danger'>Pending</p>
+            )}{' '}
+          </td>
 
           <td className='text-center'>
             <span className='mx-2'>

@@ -70,6 +70,13 @@ export const updateBooking = (id, booking, history) => async (dispatch) => {
 
 export const confirmBooking = (id, booking, history) => async (dispatch) => {
   try {
+    console.log(booking.date);
+    const newdate = new Date(booking.date);
+    const year = newdate.getFullYear();
+    const month = newdate.getMonth() + 1;
+    const date = newdate.getDate();
+    booking.date = date + '-' + month + '-' + year;
+    console.log(booking.date);
     console.log('in Confirm booking');
     const response = await axios.put(
       `http://localhost:3333/bookings/${id}`,

@@ -32,9 +32,9 @@ export class AdminDashboard extends Component {
     };
     return (
       <div>
-        {/* <div className='mb-3 col-4 sortbox'>
+        <div className='mb-3 col-4 sortbox'>
           <SortBooking />
-        </div> */}
+        </div>
         {bookings.length === 0 ? (
           <h2 className='text-center mt-5'>No Bookings</h2>
         ) : (
@@ -45,11 +45,10 @@ export class AdminDashboard extends Component {
                   <th>
                     <input type='checkbox' />
                   </th>
-
                   <th>Name</th>
-
                   <th>Booking Date</th>
                   <th>Slot</th>
+                  <th>Status</th>
 
                   <th></th>
                 </tr>
