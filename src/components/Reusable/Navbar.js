@@ -43,7 +43,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link className='nav-link' to='/dasbboard'>
+                <Link className='nav-link' to='/admin'>
                   View Ticket
                 </Link>
               </li>
